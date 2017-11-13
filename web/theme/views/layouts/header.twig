@@ -1,0 +1,19 @@
+<header class="header">
+		<div class="wrapper">
+			<a href="/" class="logo" aria-label="{{ site.name }}">
+				<img width="130px" height="50px" src="{{ theme.link }}/assets/img/logo.png" alt="{{ site.name }}">
+			</a>
+			<button class=" button__navigation icon-only" aria-label="{{__('Menu', 'site')}}" aria-controls="navigation">
+				<img width="50px" height="50px" src="{{ theme.link }}/assets/img/meny.png" alt="Meny">
+			</button>
+			<nav id="navigation" class="navigation header__navigation" aria-label="{{__('Menu', 'site')}}" aria-controls="navigation" role="navigation">
+				<ul class="navigation__primary" role="menubar">
+					{% for item in primary_menu.get_items %}
+						<li role="menuitem">
+							<a {% if item.current %}data-selected{% endif %} href="{{item.get_link}}">{{item.title}}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+</header>

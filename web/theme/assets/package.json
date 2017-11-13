@@ -1,0 +1,33 @@
+{
+  "name": "gutsnglory",
+  "version": "0.0.1",
+  "description": "Sstarter temp for wp",
+  "author": "Ehsan Pourhadi",
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "coffee-script": "1.10.x",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-rb-validate-css": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^2.0.0",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-w3c-css": "^1.0.1",
+    "imagemin-pngquant": "^4.2.0",
+    "jshint": "^2.9.4",
+    "streamqueue": "^1.1.1"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

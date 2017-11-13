@@ -1,0 +1,42 @@
+<!doctype html>
+<html {{language_attributes}}>
+<head>
+	<meta charset="{{ bloginfo('charset') }}">
+	<title>{{ (wp_title ? wp_title ~ ' - ' ) | raw }}{{ site.name }}</title>
+	<meta name="description" content="{{ bloginfo('description') }}">
+	<meta name="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale = 1.0, maximum-scale = 5.0, user-scalable=yes">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ theme.path }}/assets/img/favicon.ico">
+	
+	{% include "layouts/above-fold-css.twig" %}
+
+	{{function('wp_head')}}
+
+	{% block head %}
+	{% endblock %}
+</head>
+<body class="{{body_class}}">
+
+	<a href="#main" class="skip">{{__('Skip to main content', 'site')}}</a>
+
+	{% include "layouts/header.twig" %}
+
+	<main id="main">
+		{% block content %}
+		{% endblock %}
+	</main>
+	{% include "layouts/footer.twig" %}
+
+
+	{{ function('wp_footer') }}
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', '{{ google_analytics_id }}', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+</html>

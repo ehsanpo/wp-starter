@@ -1,0 +1,38 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "minimum-stability": "dev",
+  "config": {
+    "preferred-install": "dist",
+    "secure-http": false
+  },
+  "require": {
+    "php": ">=5.4",
+    "johnpbloch/wordpress": "4.8.2",
+    "vlucas/phpdotenv": "~1.0.9",
+    "wpackagist-plugin/timber-library": "1.3.0",
+    "wpackagist-plugin/wordpress-seo": "4.7.1",
+    "wpackagist-plugin/winsite-image-optimizer": "1.0.7",
+    "wpackagist-plugin/relevanssi": "3.6.1",
+    "wpackagist-plugin/gtmetrix-for-wordpress": "0.4.2",
+    "wpackagist-plugin/login-security-solution": "0.56.0"
+  },
+  "extra": {
+    "wordpress-install-dir": "web/wp",
+    "installer-paths": {
+      "web/site/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "wpackagist-plugin/gtmetrix-for-wordpress",
+        "wpackagist-plugin/wordpress-seo",
+        "wpackagist-plugin/timber-library"
+      ],
+      "web/site/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  }
+}

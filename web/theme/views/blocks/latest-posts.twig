@@ -1,0 +1,27 @@
+<div class="news" id="{{ data.blog_id }}">
+	<img src="{{data.news_image|resize(200, 200) }}" alt="">
+	<h3>{{ data.news_headline }}</h3>
+	<div class="description">{{ data.body_text }}</div>
+	<div class="news-items">
+		{% for item in posts %}
+			<div class="news-media">
+				<img src="{{item.thumbnail|resize(940, 560)}}" alt="">
+			</div>
+			<div class="news-content">
+				{% if item.get_field('start_datum') ==  item.get_field('slut_datum')  %}
+					<time> {{ item.get_field('start_datum') }}
+						<span>{{ item.get_field('start_tid') }} -  {{ item.get_field('slut_tid') }} </span>
+					</time>
+				{% else %}
+					<time> {{ item.get_field('start_datum')}} - {{ item.get_field('slut_datum') }} 
+						<span>{{ item.get_field('start_tid') }} -  {{ item.get_field('slut_tid') }} </span>
+					</time>
+				{% endif %}
+
+				<h4><a href="{{ item.permalink }}">{{ item.post_title }}</a></h4>
+				<div class="parag">{{ item.content }}</div>
+
+			</div>
+		{% endfor %}
+	</div>
+</div>

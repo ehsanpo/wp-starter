@@ -1,0 +1,85 @@
+.acf-section-editor {
+	position: relative;
+}
+
+.acf-section {
+	position: relative;
+
+	margin-bottom: 20px;
+	background: #fff;
+}
+
+.acf-section-handle {
+	padding: 8px 10px;
+	cursor: move;
+	border: 1px solid #e1e1e1;
+	color: #333;
+	font-size: 14px;
+	line-height: 1.4em;
+}
+
+.acf-section-handle-toolbar {
+	position: absolute;
+	top: 9px;
+	right: 9px;
+}
+
+.acf-section-content {
+	padding: 8px 10px;
+	border: 1px solid #e1e1e1;
+	border-top: 0;
+}
+
+.acf-section-content:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.acf-section-values {
+	border: 1px solid transparent;
+	margin: -20px 0;
+	padding: 20px 0;
+}
+
+.acf-sections-sorting .acf-section-values {
+	border: 1px dashed #ccf;
+	min-height: 30px;
+}
+
+.acf-sections-sorting .acf-section-empty {
+	display: none !important;
+}
+
+.acf-section-placeholder {
+	background: #ddf;
+	margin-bottom: 20px;
+}
+
+.acf-section-empty {
+	padding: 19px;
+	border: 1px dashed #ccc;
+	text-align: center;
+
+	margin-bottom: 20px;
+}
+
+.acf-section-popup {
+	display: none;
+}
+
+.acf-section-popup .selected {
+	font-weight: bold;
+	background: #777;
+}
+
+.acf-section-popup li > span.title {
+	color: #fff;
+	display: block;
+	padding: 5px;
+	background: #111;
+}
+
+.acf-section-popup li > ul {
+	padding-left: 10px;
+}

@@ -1,0 +1,50 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+			<article>
+				<div class="block block__list">
+
+					<ul class="list__inline">
+						{% for post in result %}
+							<li class="block__list--item">
+								<h2 class="block__list--title"><a href="{{post.permalink}}">{{post.title}}</a></h2>
+								{% if post.thumbnail %}
+									<img width="200px" src="{{post.thumbnail.src}}"  class="alignleft" alt="{{post.title}}" />
+								{% endif %}
+								<time class="datetime" datetime="{{post.post_date|date('Y-m-d')}}">{{post.post_date|date('Y-m-d')}}</time>
+								<div class="block__list--description">
+									{{ post.content|length > 150 ? post.content|slice(0, 150)|striptags ~ '...' : post.content|striptags }}
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% if pagination.next or pagination.prev %}
+					<div class="block block__pagination">
+						<ul>
+							{% if pagination.next %}
+							<li class="block__pagination--next">
+								<a href="{{pagination.next.link}}" class="button button--icon-right button--primary">
+									<span>{{__('Next page','site')}}</span>
+									<svg class="icon icon-chevron-right"><use xlink:href="{{ theme.link }}/assets/img/icons.svg#chevron-right"></use></svg>
+
+								</a>
+							</li>
+							{% endif %}
+							{% if pagination.prev %}
+								<li class="block__pagination--prev">
+									<a href="{{pagination.prev.link}}" class="button button--icon-left button--primary">
+										<svg class="icon icon-chevron-left"><use xlink:href="{{ theme.link }}/assets/img/icons.svg#chevron-left"></use></svg>
+										<span>{{__('Previous page','site')}}</span>
+									</a>
+								</li>
+							{% endif %}
+						</ul>
+					</div>
+				{% endif %}
+			</article>
+		{{ render.sections(post.get_field('sections')) }}
+
+{% endblock %}
+
+

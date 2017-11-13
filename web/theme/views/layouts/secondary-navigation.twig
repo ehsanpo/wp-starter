@@ -1,0 +1,12 @@
+{% if post.primary_nav_parent.children('page', 'SitePost')  %}
+	<nav id="secondary-navigation" class="navigation navigation__secondary" aria-label="{{__('Secondary Navigation', 'site')}}" role="navigation">
+		<ul>
+		{% for item in post.menu_parent.children('parent')  %}
+			<li>
+				<a {% if item.current %}data-selected{% endif %} href="{{item.get_link}}">{{item.title}}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</nav>
+{% endif %}
+

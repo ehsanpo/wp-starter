@@ -1,0 +1,53 @@
+.intro-block{
+	padding-top: $pad*18;
+	background-image: url('../img/BG1.jpg');
+	background-position: center;
+	background-size: cover;
+	@media only screen and (max-width : $break-mid) {
+			padding-top: 100px;
+		}
+	.splash {
+		margin: -150px 170px;
+		width: 50%;
+		position: relative;
+		display: block;
+		@media only screen and (max-width : $break-mid) {
+			margin: 0 auto;
+		}
+	}
+
+	.desc{
+		transform: rotate(-1deg);
+	}
+	.del1{
+		.col21{
+			img{
+				max-width: 90%;
+				@media only screen and (max-width : $break-mid) {
+					max-width: 40%;
+				}
+			}
+		}
+	}
+	.del2{
+		.col22{
+			margin-top: 5%;
+		}
+		@media only screen and (min-width : $break-mid) {
+			margin-bottom: $pad*6;
+		}
+			@extend %clearfix;
+
+	}
+	a{
+		color:#000;
+		text-shadow:0 0 3px #fff;
+		text-decoration: none;
+		display: inline-block;
+	}
+}
+.introblock-2{
+background-image: url('../img/BG1-2.jpg');
+
+}
+

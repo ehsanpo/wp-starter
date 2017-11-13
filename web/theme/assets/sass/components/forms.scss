@@ -1,0 +1,47 @@
+/* Forms
+ ========================================================================== */
+
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+legend {
+	border-bottom: 1px solid #eee;
+	display: block;
+	width: 100%;
+	margin-bottom: 1rem;
+	padding-bottom: .5rem;
+}
+
+label {
+	display: block;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=search],
+textarea {
+	padding: .2rem;
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: 1px;
+
+}
+
+label + input,
+label + textarea {
+	margin-top: 4px;
+}
+
+
+/* Buttons
+ ========================================================================== */
+ .button{
+
+ }
+

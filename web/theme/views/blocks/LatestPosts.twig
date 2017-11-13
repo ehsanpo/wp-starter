@@ -1,0 +1,8 @@
+<div class="latest-post-block" {% if posts_id %}id="{{posts_id}}"{% endif %}>
+	{% for post in posts %}
+		<li>
+			<a href="{{post.link}}">{{post.post_title}}</a>
+		</li>
+	{% endfor %}
+</div>
+

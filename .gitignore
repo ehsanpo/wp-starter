@@ -1,0 +1,15 @@
+vendor
+web/wp/
+web/theme/assets/node_modules/
+web/theme/assets/js/
+web/theme/assets/css
+
+.env
+composer.lock
+
+web/site/mu-plugins/timber-library
+web/site/mu-plugins/wordpress-seo
+web/site/plugins/relevanssi
+web/site/plugins/login-security-solution
+web/site/mu-plugins/gtmetrix-for-wordpress
+web/site/uploads

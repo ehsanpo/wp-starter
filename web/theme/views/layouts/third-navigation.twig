@@ -1,0 +1,23 @@
+{% if post.secondary_nav_parent.children('page', 'SitePost') and not post.third_nav_parent   %}
+	<nav id="tertiary-navigation" class="navigation navigation__tertiary" aria-label="Tertiary Navigation" role="navigation">
+		<ul>
+			{% for item in post.secondary_nav_parent.children('page', 'SitePost') %}
+				<li {% if item.in_hierarchy(post) %}data-selected=""{% endif %}>
+					<a href="{{item.get_link}}">{{item.title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% else %}
+
+	<nav id="tertiary-navigation" class="navigation navigation__tertiary" aria-label="Tertiary Navigation" role="navigation">
+		<ul>
+			{% for item in post.third_nav_parent.parent().children('page', 'SitePost')  %}
+				<li>
+					<a href="{{item.get_link}}" {% if item.in_hierarchy(post) %}data-selected=""{% endif %}>{{item.title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endif %}
+

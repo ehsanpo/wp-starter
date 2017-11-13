@@ -1,0 +1,35 @@
+{% if post.secondary_nav_parent.children('page', 'SitePost') and not post.third_nav_parent   %}
+	<nav class="block block__link-list bg--white" role="navigation">
+		<h2 class="title">{{ post.title|raw }}</h2>
+		<ul>
+			{% for item in post.secondary_nav_parent.children('page', 'SitePost') %}
+				<li {% if item.in_hierarchy(post) %}data-active=""{% endif %}>
+					<a href="{{item.get_link}}">{{item.title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% else %}
+	<nav class="block block__link-list bg--white" role="navigation">
+		<h2 class="title">{{ post.title|raw }}</h2>
+		<ul>
+			{% for item in post.third_nav_parent.parent().children('page', 'SitePost')  %}
+				<li>
+					<a href="{{item.get_link}}" {% if item.in_hierarchy(post) %}data-active=""{% endif %}>{{item.title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endif %}
+ {% if post.primary_nav_parent.children('page', 'SitePost') %}   
+	<nav class="block block__link-list bg--white" role="navigation">
+		<h2 class="title">{{ post.parent.title|raw }}</h2>
+		<ul>
+		{% for item in post.menu_parent.children('parent')  %}
+			<li>
+				<a {% if item.current %}data-active=""{% endif %} href="{{item.get_link}}">{{item.title}}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</nav>
+{% endif %}

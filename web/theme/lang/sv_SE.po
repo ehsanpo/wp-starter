@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Mekonomen -G\n"
+"Language: sv\n"
+
+#: search.php:9
+msgid "Your search returned no results. Try your search again or navigate.site"
+msgstr "Vi hittade inga resultat på ditt sökord. Försök igen eller navigera på webbsidorna"
+
+#: search.php:12
+msgid "Showing <strong>%1$s</strong> search results for the keywoard <strong>%2$s</strong>"
+msgstr "Visar sökresultat för"
+
+#: search.php:14
+msgid "Search results for <strong>%1$s</strong>"
+msgstr "Sökresultat för"
+
+#: views/404.twig:10
+msgid "404 - Page not found"
+msgstr "404 - Sidan hittas ej"
+
+#: views/404.twig:11
+msgid "The page you were trying to reach could not be found. Please make sure that the address is correct and try again."
+msgstr "Sidan du försöker öppna kan inte hittas. Vänligen försäkra dig om att webb-adressen är korrekt och försök på nytt"
+
+#: views/archive.twig:46 views/search.twig:47
+msgid "Next page"
+msgstr "Nästa sida"
+
+#: views/archive.twig:56 views/search.twig:57
+msgid "Previous page"
+msgstr "Tidigare sida"
+
+#: views/blocks/contact.twig:17 views/blocks/contact.twig:45
+msgid "Postal address"
+msgstr "Postadress"
+
+#: views/blocks/contact.twig:23 views/blocks/contact.twig:51
+msgid "Visiting address"
+msgstr "Besöksadress"
+
+#: views/blocks/contact.twig:29 views/blocks/contact.twig:57
+msgid "E-mail"
+msgstr "E-post"
+
+#: 
+msgid "Latest news"
+msgstr "Senaste nyheter"
+
+#: 
+msgid "Read more"
+msgstr "Läs mer"
+
+#: 
+msgid "and"
+msgstr "och"
+
+#: 
+msgid "You are here"
+msgstr "Du är här"
+
+#: 
+msgid "Home"
+msgstr "Hem"
+

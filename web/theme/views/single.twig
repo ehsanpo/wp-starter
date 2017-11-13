@@ -1,0 +1,19 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+			<article class="layout--single">
+				<div class="main-content">
+					<header>
+							{% if post.thumbnail %}
+								<div class="news-media">
+									<img src="{{post.thumbnail|resize(940, 560)}}" alt="">
+								</div>
+							{% endif %}
+						<h1>{{ post.title }}</h1>
+					</header>
+					<section>
+						{{ post.content }}
+					</section>	
+				</div>
+			</article>
+{% endblock %}
