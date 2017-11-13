@@ -1,4 +1,4 @@
-# Project Name Here
+# Wordpress (MVC) Starter Kit 
 
 ## Getting Started
 
@@ -56,6 +56,36 @@ The theme includes Page Composer to allow pages to be composed of blocks. Blocks
 Edit `composer.json` for dependencies. For plugins that are required for the site function add them both to the `require` section and then also under `installer-paths` under the `mu-plugins` section.
 
 To change the version of ACF you need to be update three places, under the package defined in `repository` for version and in the URL, and under `require`.
+
+### working with Theme
+Files are located at web/theme.
+for live editing scss & js run `gulp` in assets folder. Dont forgot to change the url in gulpfile.js @ line 76
+
+#### Assets folder structure
+
+```
+	assets
+		css - minified css
+		fonts - all project font
+		img - theme images
+		sass - all sass files
+		scripts - dev js files
+			/lib	- 3rd party scripts (external js files)
+			main.js - themes main script
+
+
+```
+
+#### MVC structure
+
+```
+	themes
+		blocks - M & C (change fileds & controllers)
+		views - V (HTML & layouts)
+		lib - C (Controlelr and default ACF)
+
+```
+
 
 ## Deploying
 
