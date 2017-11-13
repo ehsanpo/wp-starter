@@ -64,14 +64,14 @@ for live editing scss & js run `gulp` in assets folder. Dont forgot to change th
 #### Assets folder structure
 
 ```
-	assets
-		css - minified css
-		fonts - all project font
-		img - theme images
-		sass - all sass files
-		scripts - dev js files
-			/lib	- 3rd party scripts (external js files)
-			main.js - themes main script
+assets
+	css - minified css
+	fonts - all project font
+	img - theme images
+	sass - all sass files
+	scripts - dev js files
+		/lib	- 3rd party scripts (external js files)
+		main.js - themes main script
 
 
 ```
@@ -79,13 +79,23 @@ for live editing scss & js run `gulp` in assets folder. Dont forgot to change th
 #### MVC structure
 
 ```
-	themes
-		blocks - M & C (change fileds & controllers)
-		views - V (HTML & layouts)
-		lib - C (Controlelr and default ACF)
+themes
+	blocks - M & C (change fileds & controllers)
+	views - V (HTML & layouts)
+	lib - C (Controlelr and default ACF)
 
 ```
 
+## Using bash script to create new Blocks
+To be able to run the script first run `chmod u+x wp.sh` then run `wp.sh blockname` to create new blocks. 
+
+The script will create 3 files:
+
+PHP file in `web/theme/blocks/`
+
+Twig file in `web/theme/views/blocks/`
+
+CSS	file in `/web/theme/assets/sass/blocks/`
 
 ## Deploying
 
@@ -103,6 +113,10 @@ Run `fly deploy:dev`
 If you're dev user is not the same as your local user you need to set the environment variable `DEVUSER`:
 
 `DEVUSER=cookiemonster fly deploy:dev`
+
+#### Slack
+Put your slackWebhookUri & slackChannal flightplan.js then run `DEVUSER=cookiemonster fly deploy:dev --slack` to send a notification to Slack
+
 
 ### To a new environment
 
