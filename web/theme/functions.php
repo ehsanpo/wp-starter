@@ -8,7 +8,6 @@ $libraries = array(
 	'twig_extensions',
 	'post',
 	'default_page',
-	'footer_content',
 );
 
 foreach($libraries as $library) {
