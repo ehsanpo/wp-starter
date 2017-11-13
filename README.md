@@ -57,7 +57,7 @@ Edit `composer.json` for dependencies. For plugins that are required for the sit
 
 To change the version of ACF you need to be update three places, under the package defined in `repository` for version and in the URL, and under `require`.
 
-### working with Theme
+## Working with Theme
 Files are located at web/theme.
 for live editing scss & js run `gulp` in assets folder. Dont forgot to change the url in gulpfile.js @ line 76
 
