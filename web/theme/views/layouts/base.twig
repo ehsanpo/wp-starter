@@ -1,6 +1,7 @@
 <!doctype html>
 <html {{language_attributes}}>
 <head>
+{% spaceless %}
 	<meta charset="{{ bloginfo('charset') }}">
 	<title>{{ (wp_title ? wp_title ~ ' - ' ) | raw }}{{ site.name }}</title>
 	<meta name="description" content="{{ bloginfo('description') }}">
@@ -20,7 +21,7 @@
 
 	{% include "layouts/header.twig" %}
 
-	<main id="main">
+	<main id="main" class="main">
 		{% block content %}
 		{% endblock %}
 	</main>
@@ -40,3 +41,4 @@
 
 </body>
 </html>
+{% endspaceless %}

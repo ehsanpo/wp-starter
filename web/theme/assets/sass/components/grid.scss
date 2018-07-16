@@ -1,0 +1,30 @@
+.grid{
+	display: grid;
+	grid-gap: 24px;
+	&.grid--2{
+		grid-template-columns: 1fr;
+		
+		@include bp-max{
+			grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
+		}
+		@include bp-medium{
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	&.grid--no-gap{
+		grid-gap: 24px;
+		@include bp-max{
+			grid-gap: 0;
+		}
+		
+	}
+	&.grid--auto-c{
+		
+		@include bp-medium{
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include bp-max{
+			grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
+		}
+	}
+}

@@ -1,5 +1,6 @@
 <?php
-
+new \Timber\Timber();
+new Timmy\Timmy();
 class SitePost extends TimberPost {
 	public function menu_parent() {
 		if($this->parent !== false) {

@@ -1,47 +1,10 @@
-
-<div class="block block__standard {{ class }} {{ stn_tema }}" id="{{standard_id}}">
-	{% if stn_image %}
-		<div class="block-media">
-			<img src="{{ stn_image }}" width="50%">
+<div class="block-standard {% if class %}{{class}}{% endif %}">
+	<div class="wrapper{% if narrow %} narrow{% endif %}">
+		<div class="grid grid--auto-c">
+			{% for item in stn_block %}
+				<div>{{item.body_text}}</div>
+			{% endfor %}
 		</div>
-	{% endif %}
-
-	<div class="block-container">
-
-		{% if stn_headline %}
-		<div class="block-header">
-			<h3 class="title">{{ stn_headline }}</h3>
-		</div>
-		{% endif %}
-
-		{% if body_text %}
-		<div class="block-content">
-			{{ body_text | raw }}
-		</div>
-		{% endif %}
-		<hr>
-		{% if stn_link %}
-		<div class="block-footer">
-			<ul>
-				{% for item in stn_link %}
-
-					{% if item.link_type == 'url' %}
-						<li>
-							<a href=" {{ item.link_url }}" class="button"><span>{{ item.link_text }}</span></a>
-						</li>
-					{% endif %}
-
-					{% if item.link_type == 'page' %}
-						<li>
-								<a href=" {{ item.link_page }}" class="button"><span>{{ item.link_text }}</span></a>
-						</li>
-					{% endif %}
-
-				{% endfor %}
-			</ul>
-		</div>
-		{% endif %}
-
 	</div>
 </div>
 

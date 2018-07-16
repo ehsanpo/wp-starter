@@ -1,0 +1,20 @@
+<div class="links-block {% if class %}{{class}}{% endif %}"> 
+	<div class="wrapper">
+		<div class="grid grid--auto-c">
+		{% for item in links %}
+			<div class="link">
+			{% if item.icon %}
+				<img {{item.icon|get_timber_image_responsive('body') }}>
+			{% endif %}
+			<a href="{{item.link}}" ><h3>{{item.title}}</h3></a>
+				<div class="content">
+					{{item.body_text}}
+					{% if item.link_text %}
+						<a href="{{item.link}}" class="btn">{{item.link_text}}</a>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</div>

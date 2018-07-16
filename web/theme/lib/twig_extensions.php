@@ -25,17 +25,10 @@ class Twig_Renderer {
 			if($block['acf_section'] == 'shared-content') {
 				$block['toplevel'] = true;
 				Blocks::render_single($block['acf_section'], $block);
-
 			} else if($block['acf_section'] == 'section') {
 				Blocks::render_single($block['acf_section'], $block);
-
-			}else if($block['acf_section'] == 'latest-posts') {
+			}else {
 				Blocks::render_single($block['acf_section'], $block);
-				
-			} else {
-				echo '<div class="section section--no-padding"><div class="wrapper">';
-				Blocks::render_single($block['acf_section'], $block);
-				echo '</div></div>';
 			}
 		}
 	}

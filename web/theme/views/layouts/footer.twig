@@ -1,9 +1,26 @@
 <footer class="footer" role="contentinfo">
 	<div class="wrapper">
-		<div class="col col-contact" itemscope itemtype="http://schema.org/Organization">
-			<span class="sitename" itemprop="name">{{ site.name }}</span>
-			<div class="address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-				{{ footer.address }}
+		<div class="grid grid--auto-c">
+			<div class="col-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="/" class="footer-logo" aria-label="{{ site.name }}">
+					<img width="130px" height="50px" src="{{ theme.link }}/assets/img/logo.png" alt="{{ site.name }}">
+				</a>
+				<div class="address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+					{{ footer.address }}
+				</div>
+			</div>
+			<nav class="navigation footer__navigation" aria-label="{{__('Menu', 'site')}}">
+				<ul class="navigation__footer" role="menubar">
+					{% for item in footer_menu.get_items %}
+						<li role="menuitem">
+							<a {% if item.current %}data-selected{% endif %} href="{{item.get_link}}">{{item.title}}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+			<div class="col social">
+				<a href="">Instagram</a>
+				<a href="">Facebook</a>
 			</div>
 		</div>
 	</div>

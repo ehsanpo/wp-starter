@@ -1,3 +1,6 @@
-.standard-block{
-
+.block-standard{
+	@extend %block-pad;
+	.narrow{
+		width: $max-width_m;
+	}
 }

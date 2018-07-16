@@ -10,6 +10,50 @@ class ImageBlock extends TwigBlock {
 
 	function define(&$fields) {
 		$fields[] = array(
+			'key' => 'field_66fd48ad0c399',
+			'label' => 'Text Color',
+			'name' => 'text_color',
+			'type' => 'radio',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => 50,
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				"text-white" => "White",
+				"text-black" => "Black"
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => "text-black",
+			'layout' => 'horizontal',
+		);
+		$fields[] = array(
+			'key' => 'field_77fd48ad0c399',
+			'label' => 'Image Padding',
+			'name' => 'image_padding',
+			'type' => 'radio',
+			'instructions' => 'How big the image will be.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => 50,
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				"big-padding" => "Big",
+				"small-padding" => "Small"
+			),
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => "black",
+			'layout' => 'horizontal',
+		);
+		$fields[] = array(
 			'key' => 'field_57fb94fbe79c7',
 			'label' => 'Image',
 			'name' => 'image',
@@ -27,27 +71,11 @@ class ImageBlock extends TwigBlock {
 			'preview_size' => 'thumbnail',
 			'library' => 'all',
 		);
-		$fields[] = array (
-			'key' => 'field_58fb9566e79d8',
-			'label' => 'Parallax',
-			'name' => 'parallax',
-			'_name' => 'parallax',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			);
-		$fields[] = array (
-			'key' => 'field_58fb95e9ef667',
-			'label' => 'ID',
-			'name' => 'image_id',
-			'_name' => 'image_id',
+
+		$fields[] = array(
+			'key' => 'field_5bfd3f4159f6d',
+			'label' => 'Body text',
+			'name' => 'body_text',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,
@@ -64,7 +92,7 @@ class ImageBlock extends TwigBlock {
 			'maxlength' => '',
 			'readonly' => 0,
 			'disabled' => 0,
-			);
+		);
 	}
 
 	function get_template_data($data) {

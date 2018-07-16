@@ -13,3 +13,4 @@ web/site/plugins/relevanssi
 web/site/plugins/login-security-solution
 web/site/mu-plugins/gtmetrix-for-wordpress
 web/site/uploads
+node_modules

@@ -1,0 +1,9 @@
+<div class="video-block"> 
+	<a href="{{video_iframe}}" class="play" data-featherlight="iframe" data-featherlight-iframe-width="640" data-featherlight-iframe-height="480" data-featherlight-iframe-frameborder="0" data-featherlight-iframe-allow="autoplay; encrypted-media" data-featherlight-iframe-allowfullscreen="true">
+	{% if preview_video %}
+		<video class="video video-poster" autoplay loop muted {% if preview_image  %}poster="preview_image.url"{% endif %}>
+			<source src="{{ preview_video.url }}" type="{{ preview_video.mime_type}}">
+		</video>
+	{% endif %}
+	</a>
+</div>

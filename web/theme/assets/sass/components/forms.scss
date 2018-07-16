@@ -41,7 +41,25 @@ label + textarea {
 
 /* Buttons
  ========================================================================== */
- .button{
-
+ .btn{
+	padding: 16px 32px;
+	display: inline-block;
+	background: $color_primary;
+	border:0;
+	border-radius: 32px;
+	color:#fff;
+	font-weight: bold;
+	line-height: 1.25;
+	&:hover{
+		background: lighten($color_primary, 10%);
+	}
+	&.btn--white{
+		background: #fff;
+		border: 1px solid $color_primary;
+		color:#000;
+		&:hover{
+			background: darken(#fff, 10%);
+		}
+	}
  }
 

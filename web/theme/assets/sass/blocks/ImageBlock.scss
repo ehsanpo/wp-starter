@@ -1,5 +1,20 @@
 .image-block{
-	min-height: 400px;
+	
 	background-size: cover;
 	background-position: center;
+	.content{
+		@extend .quote;
+		&.big-padding{
+			padding: $block_pad*2 0;
+		}
+		&.text-white{
+			color:#fff;
+		}
+		&.small-padding{
+			padding: $block_pad 0;
+		}
+		&.text-black {
+			color:#000;
+		}
+	}
 }

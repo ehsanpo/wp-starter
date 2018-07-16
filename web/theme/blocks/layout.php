@@ -20,7 +20,7 @@ class Layout extends LayoutBlock {
 	}
 
 	function render($data, $styles) {
-		self::render_sections($data['content'], array('class' => 'row ' .(empty($styles['class']) ? 'row--cols-1' : $styles['class'])));
+		self::render_sections($data['content'], array('class' =>  $styles['class']));
 	}
 }
 

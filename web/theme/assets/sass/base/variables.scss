@@ -2,22 +2,28 @@
  ========================================================================== */
 
 
-$color_primary: #d7c9b6;
+$color_primary: #813f90;
+$color_alt_1: #000;
+$color_alt_2: #eee;
 $black: #000;
 $white: #fff;
 
-$max-width: 1024px;
-$max-width_m: 980px;
+$max-width: 1128px;
+$max-width_m: 744px;
 
 $break-small: 320px;
 $break-mid: 768px;
 $break-large: 1024px;
-$pad: 8px;
+$pad: 16px;
+$block_pad:96px;
+$block_pad_m: 64px;
 
 $transition: .35s all cubic-bezier(.455,.03,.515,.955);
 
 /* Mixin
  ========================================================================== */
+
+
 %clearfix {
   *zoom: 1;
   &:before, &:after {
@@ -39,6 +45,7 @@ $transition: .35s all cubic-bezier(.455,.03,.515,.955);
   width: $max-width;
   max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
     @media only screen  and (max-width :  $max-width) {
      padding: 0 $pad
     }
@@ -50,9 +57,6 @@ $transition: .35s all cubic-bezier(.455,.03,.515,.955);
   width: $max-width_m;
   max-width: 100%;
   margin: 0 auto;
-  @media only screen  and (max-width :  $break-mid) {
-     padding: 0 $pad
-    }
 }
 %visuallyhidden {
   margin: -1px;
@@ -66,23 +70,33 @@ $transition: .35s all cubic-bezier(.455,.03,.515,.955);
 }
 
 @mixin bp-large {
-  @media only screen and (max-width: 60em) {
+  @media only screen and (min-width: 60em) {
     @content;
   }
 }
 
 @mixin bp-medium {
-  @media only screen and (max-width: 40em) {
+  @media only screen and (min-width: 40em) {
     @content;
   }
 }
 
 @mixin bp-small {
-  @media only screen and (max-width: 30em) {
+  @media only screen and (min-width: 30em) {
     @content;
   }
 }
-
+@mixin bp-max {
+  @media only screen and (min-width:$max-width) {
+    @content;
+  }
+}
+%block-pad {
+  padding: $block_pad 0;
+  @include bp-large{
+    padding: $block_pad_m 0;
+  }
+}
 /*
   @include bp-large{
       float: right;

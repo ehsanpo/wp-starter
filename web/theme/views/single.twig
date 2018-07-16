@@ -9,9 +9,12 @@
 									<img src="{{post.thumbnail|resize(940, 560)}}" alt="">
 								</div>
 							{% endif %}
-						<h1>{{ post.title }}</h1>
+							<div class="wrapper">
+								<h1>{{ post.title }}</h1>
+							</div>
+						
 					</header>
-					<section>
+					<section class="wrapper">
 						{{ post.content }}
 					</section>	
 				</div>

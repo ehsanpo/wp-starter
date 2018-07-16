@@ -73,7 +73,7 @@ gulp.task('scripts',['js-hint'], function() {
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        proxy: "start.dev",
+        proxy: "gg-start.loc",
     });
 
     gulp.watch(src.jsFiles, ['scripts']);

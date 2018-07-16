@@ -1,12 +1,9 @@
-<div class="image-slider-block" id="{{ ImageSlider_id }}">
-
+<div class="image-slider-block">
 	{% for item in ImageSlider_Images %}
-	
 		<div>
 			<a href="{{item.link}}">
 				<img src="{{item.Image}}" alt="">
 			</a>
 		</div>
-		
 	{% endfor %}
 </div>

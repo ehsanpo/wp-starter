@@ -1,8 +1,24 @@
-<div class="latest-post-block" {% if posts_id %}id="{{posts_id}}"{% endif %}>
-	{% for post in posts %}
-		<li>
-			<a href="{{post.link}}">{{post.post_title}}</a>
-		</li>
-	{% endfor %}
+{% if data.show == "select" %}
+{% set post_to_show = data.selected_news_list  %}
+{% else %}
+{% set post_to_show = posts  %}
+{% endif %}
+<div class="latest-post-block {% if class %}{{class}}{% endif %}">
+	<div class="wrapper">
+		<ul class="grid grid--auto-c">
+		{% for post in post_to_show %}
+			<li>
+				{% if post.thumbnail %}
+					<img {{post.thumbnail|get_timber_image_responsive('body') }}>
+				{% endif %}
+				<a href="{{post.link}}"><h3>{{post.post_title}}</h3></a>
+				<div class="excerpt">
+					{{ post.post_excerpt }}
+				</div>
+				<a href="{{post.link}}">Läs mer</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
 </div>
 

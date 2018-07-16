@@ -1,0 +1,20 @@
+.imageAndText-block{
+	@extend %block-pad;
+	.itb-text{
+		@include bp-large{
+			padding: 0  0  0 120px;
+		}
+	}
+	.image_on_left{
+		.itb-text{
+			grid-row-start: inherit;
+			
+			@include bp-large{
+				grid-row-start: 1;
+			}
+			@include bp-large{
+				padding: 0  120px  0 0;
+			}
+		}
+	}
+}

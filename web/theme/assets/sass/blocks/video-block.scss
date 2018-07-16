@@ -1,0 +1,27 @@
+.video-block{
+	video{
+		display: block;
+		max-width: 100%;
+		width: 100%;
+	}
+	.play{
+		position: relative;
+		display: block;
+		&:after{
+			content: " ";
+			background-image: url("../img/play-circle.svg");
+			position: absolute;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+			background-color: transparent;
+			background-position: center;
+			left: 0;
+			text-align: center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			top: 0;
+		}
+	}
+}

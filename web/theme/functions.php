@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/../../vendor/autoload.php');
 
 define('I18N_THEME', 'theme');
 
@@ -33,7 +34,8 @@ class Site extends TimberSite {
 		add_filter('timber_context', array($this, 'timber_context'));
 		add_filter('twig_apply_filters', array($this, 'twig_filters'));
 		//add_filter( 'tiny_mce_plugins', array($this, 'disable_emojis_tinymce')  );
-
+		add_filter( 'upload_mimes',  array($this, 'add_svg_to_upload_mimes'), 10, 1 );
+		add_action('admin_head',  array($this, 'fix_svg_thumb_display') );
 		// Register actions
 		// add_action('init', array($this, 'custom_init'))
 
@@ -57,12 +59,17 @@ class Site extends TimberSite {
 			'ImageSlider',
 			'ShowCategory',
 			'LatestPost',
+			'hero-block',
+			'video-block',
+			'imageAndText-block',
+			'links-block'
 
 		));
 
 
 		// Register Primary Navigation
 		register_nav_menu('primary', 'Primary Navigation');
+		register_nav_menu('footer', 'Footer Navigation');
 
 		//add option page
 		function create_option_page(){
@@ -81,7 +88,19 @@ class Site extends TimberSite {
 
 		parent::__construct();
 	}
-
+	function fix_svg_thumb_display() {
+		  echo '<style type="text/css">
+        .attachment-266x266, .thumbnail img {
+             width: 100% !important;
+             height: auto !important;
+        }
+        </style>';
+	}
+	function add_svg_to_upload_mimes( $upload_mimes ) {
+		$upload_mimes['svg'] = 'image/svg+xml';
+		$upload_mimes['svgz'] = 'image/svg+xml';
+		return $upload_mimes;
+	}
 	/**
 	  * Setup any extra global variables you want all templates of the
 	  * theme to have access to.
@@ -90,6 +109,7 @@ class Site extends TimberSite {
 		$ctx['site'] = $this;
 
 		$ctx['primary_menu'] = new TimberMenu('primary');
+		$ctx['footer_menu'] = new TimberMenu('footer');
 
 		// To fetch all options as an associative array
 		$options = get_fields('option');
@@ -114,6 +134,35 @@ class Site extends TimberSite {
 	 * the site experience a bit better, customize as needed.
 	 */
 	private function cleanup() {
+		//Register your image sizes with Timmy
+		add_filter( 'timmy/sizes', function( $sizes ) {
+		    return array(
+		        'head' => array(
+		            'resize' => array( 370 ),
+		            'srcset' => array(
+		                 array( 1024 ),
+		                array( 480 ),
+		                2, // This is the same as array(2800, 1200)
+		            ),
+		            'sizes' => '(min-width: 60em) 100vw, 100vw',
+		            'name' => 'Width 1/4 fix',
+		            'post_types' => array( 'post', 'page'  ),
+		        ),
+		        'body' => array(
+		            'resize' => array( 370 ),
+		            'srcset' => array(
+		                array( 768 ),
+		                array( 480 ),
+		                2, // This is the same as array(2800, 1200)
+		            ),
+		            'sizes' => '(min-width: 62rem) 50vw, 100vw',
+		            'name' => 'Width 1/4 fix',
+		            'post_types' => array( 'post', 'page' ),
+		        ),
+
+		    );
+		} );
+
 		remove_action('wp_head', 'wp_generator');
 		add_filter('show_admin_bar', '__return_false');
 
@@ -186,28 +235,19 @@ class Site extends TimberSite {
  * Layout Styles
  */
 $layout_styles = function ($styles) {
-	$styles['Columns'] = array(
-		'row--cols-2' => 'Two Columns',
-		'row--cols-3' => 'Three Columns',
-		'row--cols-4' => 'Four Columns'
+	$styles['Background color'] = array(
+		'bg_color_primary' => 'primary',
+		'bg_color_alt_1' => 'alt color 1',
+		'bg_color_alt_2' => 'alt color 2'
 	);
 
 	return $styles;
 };
 
-add_filter('acf/section/styles/layout', $layout_styles);
-
-
-$section_styles = function ($styles) {
-	$styles['Spacing'] = array(
-		'section--no-padding' => 'Remove Spacing',
-	);
-
-	return $styles;
-};
-
-add_filter('acf/section/styles/section', $section_styles);
-
+add_filter('acf/section/styles/imageAndText-block', $layout_styles);
+add_filter('acf/section/styles/LatestPosts', $layout_styles);
+add_filter('acf/section/styles/links-block', $layout_styles);
+add_filter('acf/section/styles/StandardBlock', $layout_styles);
 
 /**
  * @param \PHPMailer $phpmailer

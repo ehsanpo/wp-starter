@@ -1,0 +1,32 @@
+<div class="hero-block" {% if background_image %} style="background-image:url('{{background_image}}') " {% endif %}> 
+	<div class="wrapper">
+		<div class="wrapper-m">
+			<div class="v_center">
+				{% if title %}
+					<h1>{{title}}</h1>
+				{% endif %}
+				{% if body_text %}
+					<p>{{body_text}}</p>
+				{% endif %}
+				{% if add_link %}
+					<div class="block-footer">
+						<ul>
+							{% for item in stn_link %}
+								{% if item.link_type == 'url' %}
+									<li>
+										<a href=" {{ item.link_url }}" class="btn">{{ item.link_text }}</a>
+									</li>
+								{% endif %}
+								{% if item.link_type == 'page' %}
+									<li>
+										<a href=" {{ item.link_page }}" class="btn">{{ item.link_text }}</a>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

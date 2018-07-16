@@ -1,3 +1,8 @@
-<div class="image-block {% if parallax %}parallax{% endif %}" id="{{ image_id }}" style="background-image:url({{image}})">
-	
+<div class="image-block" style="background-image:url({{image}})">
+	{% if body_text %}
+		<div class="wrapper">
+			<div class="content {{text_color}} {{image_padding}}">{{body_text}}</div>
+		</div>
+	{% endif %}
 </div>
+

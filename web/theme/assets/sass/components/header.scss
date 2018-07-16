@@ -1,4 +1,32 @@
 .header{
-
+	padding: $pad 0;
+	.logo{
+		margin-right: $pad;
+	}
+	nav{
+		display:none;
+		padding: $pad 0;
+		@include bp-medium{
+			display: inline-block;
+			padding: 0;
+		}
+		&.open{
+			display: block;
+		}
+		li{
+			display: block;
+			@include bp-medium{
+			display: inline-block;
+			}
+		}
+	}
 }
 
+.button__navigation{
+	background: transparent;
+	border: none;
+	display: inline-block;
+	@include bp-medium{
+			display: none;
+		}
+}

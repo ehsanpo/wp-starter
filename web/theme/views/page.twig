@@ -1,6 +1,7 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
+	{% if post.get_field('sections') %}
 		{{ render.sections(post.get_field('sections')) }}
+	{% endif %}
 {% endblock %}
-

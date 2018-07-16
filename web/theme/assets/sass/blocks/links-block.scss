@@ -1,0 +1,7 @@
+.links-block{
+	@extend %block-pad;
+	text-align: center;
+	img{
+		width: 48px;
+	}
+}

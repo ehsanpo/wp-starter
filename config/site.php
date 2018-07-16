@@ -1,7 +1,7 @@
 <?php
 
 $root_dir = dirname(__DIR__);
-$webroot_dir = $root_dir . '/web';
+$webroot_dir = $root_dir . '/public_html';
 
 // This will load .env in the root
 Dotenv::load($root_dir);

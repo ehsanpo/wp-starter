@@ -1,0 +1,32 @@
+<div class="imageAndText-block {% if class %}{{class}}{% endif %}">
+	<div class="wrapper">
+		<div class="grid grid--2 grid--no-gap {% if image_on_left %}image_on_left{% endif %}">
+			<div class="itb-image">
+				<img {{image|get_timber_image_responsive('body') }}>
+			</div>
+			<div class="itb-text">
+				<h2>{{headline}}</h2>
+				<div>{{body_text}}</div>
+				{% if stn_link %}
+				<div class="itb-footer">
+					<ul>
+						{% for item in stn_link %}
+							{% if item.link_type == 'url' %}
+								<li>
+									<a href="{{ item.link_url }}" class="btn">{{ item.link_text }}</a>
+								</li>
+							{% endif %}
+							{% if item.link_type == 'page' %}
+								<li>
+									<a href="{{ item.link_page }}" class="btn">{{ item.link_text }}</a>
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+

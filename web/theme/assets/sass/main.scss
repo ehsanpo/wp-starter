@@ -8,10 +8,15 @@
 @import "components/typography.scss";
 @import "components/header.scss";
 @import "components/footer.scss";
+@import "components/featherlight.scss";
+@import "components/grid.scss";
 @import "components/layout.scss";
-
-
 
 @import "blocks/ImageBlock.scss";
 @import "blocks/standard-block.scss";
-
+@import "blocks/LatestPost.scss";
+@import "blocks/hero-block.scss";
+@import "blocks/video-block.scss";
+@import "blocks/quote-block.scss";
+@import "blocks/imageAndText-block.scss";
+@import "blocks/links-block.scss";
